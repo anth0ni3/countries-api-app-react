@@ -1,0 +1,43 @@
+.input-search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: $Elements;
+  //padding: 1rem;
+  gap: 1rem;
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    fill: $Text;
+  }
+
+  &-input {
+    width: 100%;
+    //padding: 1rem;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+
+    &,
+    &::placeholder {
+      color: $Text;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .input-search {
+    width: auto;
+    flex: 0 1 calc(100vw - 50vw);
+  }
+}
+
+//@media (min-width: 1024px) {
+//  .input-search {
+//    width: auto;
+//    flex: 0 1 calc(100vw - 70vw);
+//  }
+//}

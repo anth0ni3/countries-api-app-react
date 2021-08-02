@@ -1,0 +1,46 @@
+.filter-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  //justify-content: space-between;
+  //margin: 0.7rem 1rem;
+  border-radius: 4px;
+  background-color: $Elements;
+  //padding: 1.1rem;
+  gap: 1rem;
+
+  //&-icon {
+  //  display: flex;
+  //  align-items: center;
+  //  fill: $Text;
+  //}
+
+  &-select {
+    width: 100%;
+    //padding: 1rem;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+
+    option {
+      background-color: $Elements;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    &,
+    &::placeholder {
+      color: $Text;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-input {
+    width: auto;
+    //padding: 1.1rem;
+    flex: 0 1 calc(100vw - 75vw);
+  }
+}

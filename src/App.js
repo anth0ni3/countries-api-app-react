@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useContext } from "react";
+import { Switch, Route } from "react-router-dom";
+import CountryList from "./components/CountryList";
+import NavBar from "./components/NavBar";
+import InputSearch from "./components/InputSearch";
+import FilterInput from "./components/FilterInput";
+import MoreInfo from "./components/MoreInfo";
+import { ThemeContext } from "./store/Theme.context";
 
 function App() {
+  const { isDark } = useContext(ThemeContext);
+  console.log("App Rendered");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${isDark ? "Dark" : ""}`}>
+      <NavBar />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <>
+              <div className="inputs p">
+                <InputSearch />
+                <FilterInput />
+              </div>
+              <CountryList />
+            </>
+          )}
+        />
+        <Route
+          path="/country/:countryNumber"
+          render={(props) => <MoreInfo {...props} />}
+        />
+      </Switch>
     </div>
   );
 }

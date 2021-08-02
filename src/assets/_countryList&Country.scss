@@ -1,0 +1,68 @@
+@import "variables";
+
+.country-list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  padding: 2rem;
+  gap: 1.4rem;
+  width: 100vw;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: $Background;
+}
+
+.country {
+  background-color: $Elements;
+  color: $Text;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 15.5rem;
+
+  &:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+  }
+
+  &-img-wrapper {
+    .country-img {
+      width: 100%;
+    }
+  }
+  &-name {
+    color: $Text;
+    font-size: 2em;
+    font-weight: $boldFont;
+    padding-bottom: 0.7rem;
+  }
+
+  &-info-wrapper {
+    padding: 1rem 1.5rem 1.9rem;
+  }
+
+  &-info {
+    color: $Text;
+    font-size: 1.02rem;
+    padding: 0 0 0.7rem;
+
+    span {
+      font-weight: $normalFont;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .country-list-wrapper {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (min-width: 1024px) {
+  .country-list-wrapper {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+@media (min-width: 1440px) {
+  .country-list-wrapper {
+    grid-template-columns: repeat(4, auto);
+  }
+}

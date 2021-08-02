@@ -1,0 +1,36 @@
+@import "variables";
+.App {
+  background-color: $Background;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+}
+@import "navBar";
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+@import "inputSearch";
+@import "filterInput";
+@import "countryList&Country";
+@import "moreInfo";
+
+.p {
+  padding: 1.2rem;
+}
+
+.sh {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 768px) {
+  .p {
+    padding: 1.4rem 2rem;
+  }
+}

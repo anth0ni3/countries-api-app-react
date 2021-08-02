@@ -1,0 +1,34 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: $Elements;
+  color: $Text;
+  z-index: 99999;
+
+  &-logo {
+    h4 {
+      font-weight: $boldFont;
+    }
+  }
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      svg {
+        fill: $Text;
+      }
+    }
+    font-weight: $normalFont;
+  }
+}
